@@ -6,14 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jr FE Challenge</title>
     <meta name="description" content="Jr FE Challenge" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <header>
-      <nav></nav>
-      <section></section>
+    <header class="headerBgr">
+      <div class="container">
+        <div class="row">
+          <nav class="top-nav">
+            <div class="col-8"><img class="logo" src="images/logo.svg" alt="" /></div>
+            <div class="col-4 d-flex justify-content-end">
+              <img class="search-ico" src="images/search.svg" alt="lock" />
+              <img class="person-ico" src="images/person.svg" alt="lock" />
+            </div>
+          </nav>
+        </div>
+        <section class="search-area">
+          <h1 class="strong text-center">Search Any Email Address</h1>
+          <h4 class="text-center"><span class="yellow-color strong">Start Here</span> - Look up the owner's name, photos and online profiles. See what you find!</h4>
+          <form action="<%= next_page %>" id="header-search-email" novalidate="novalidate" autocomplete="off">
+            <div class="email-field" id="input-email">
+              <input type="text" name="fn" id="email" autocomplete="off" data-placeholder-focus="false" required />
+              <label>EMAIL</label>
+            </div>
+            <div class="">
+              <button type="submit" class="btn" id="submit_btn">GO!</button>
+            </div>
+          </form>
+          <p class="privacy-area yellow-color strong">Enter Any Email Address. They won't be notified.</p>
+        </section>
+      </div>
     </header>
 
     <section>
@@ -26,7 +50,8 @@
       </div>
     </footer>
     
-    <script type="text/javascript" src="js/runner.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/runner.js"></script>
   </body>
 </html>
