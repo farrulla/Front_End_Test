@@ -98,28 +98,65 @@ h4 {
     color: #4A4A4A;
     border: 0;
     width: 100%;
-    height: 30px;
-    height: 100%;
-    padding: 15px;
+    height: 70px;
+    padding: 20px;
     line-height: 30px;
-    font-size: 18px;
+    font-size: 22px;
     background: transparent;
+}
+
+.email-field input:focus {
+    outline: none;
 }
 
 .email-field label {
     color: #9B9B9B;
     font-size: 16px;
+    line-height: 16px;
     font-weight: bold;
-    letter-spacing: 1.92px;
-    padding: 15px 0 0 12px;
+    letter-spacing: 2px;
+    padding: 0 0 0 20px;
     position: absolute;
-    top: 0;
+    top: 5px;
     left: 0;
     -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
     -o-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
     transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
     pointer-events: none;
 }
+
+::placeholder {
+    color: #cccccc;
+}
+
+input:placeholder-shown + label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 1.5rem) scale(1.5);
+    -webkit-transform: translate(0, 1.5rem) scale(1.5);
+    -moz-transform: translate(0, 1.5rem) scale(1.5);
+    -ms-transform: translate(0, 1.5rem) scale(1.5);
+    -o-transform: translate(0, 1.5rem) scale(1.5);
+}
+ 
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+
+input:focus::-webkit-input-placeholder {
+    opacity: 1;
+  }
+
+input:not(:placeholder-shown) + label,
+input:focus + label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+  }
 
 .email-field.active {
     border: 1px solid #4A3B8F;
@@ -157,6 +194,7 @@ h4 {
     font-size: 22px;
     padding: 10px 20px;
     width: 100%;
+    height: 70px;
     text-align: center;
     -webkit-transition: all 0.25s ease-out;
     -o-transition: all 0.25s ease-out;
@@ -182,6 +220,29 @@ h4 {
     font-size: 16px;
     background: url('../images/lock.svg') no-repeat 0 0 transparent;
   }
+
+ 
+@media (min-width: 768px) {
+    h1 {
+        font-size: 48px;
+    }
+    h4 {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 992px) {
+    h1 {
+        font-size: 52px;
+    }
+    h4 {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+}
 /*
 ========================
 ======== CONTENT ======== 
@@ -225,6 +286,54 @@ h4 {
     font-size: 16px;
     line-height: 150%;
 }
+
+.article .row {
+    margin: 0;
+}
+@media (min-width: 768px) {
+    .content-area {
+        padding: 40px 0;
+    }
+    .content-area h2 {
+        font-size: 48px;
+    }
+    .content-area .main-text {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .bullet {
+        max-width: 63px;
+        height: 63px;
+        font-size: 33px;
+        line-height: 63px;
+     }
+}
+@media (min-width: 992px) {
+    .content-area h2 {
+        font-size: 52px;
+    }
+    .content-area .main-text {
+        font-size: 22px;
+        line-height: 33px;
+    }
+    .bullet {
+        max-width: 90px;
+        height: 90px;
+        font-size: 48px;
+        line-height: 90px;
+     }
+    .article-container h5 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .article-container p {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    
+}
 /*
 ========================
 ======== FOOTER ======== 
@@ -242,4 +351,18 @@ h4 {
 
 .footer .disclaimer-links {
     font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    .footer .disclaimer-links {
+        padding: 25px 0 20px;
+    }
+}
+
+@media (min-width: 992px) {
+
+}
+
+@media (min-width: 1200px) {
+    
 }
