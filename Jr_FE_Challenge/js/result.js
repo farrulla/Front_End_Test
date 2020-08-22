@@ -1,21 +1,18 @@
-// Create a request variable and assign a new XMLHttpRequest object to it.
 var request = new XMLHttpRequest()
+var emailAddressSearched = sessionStorage.getItem('email-Address');
+var url = 'http://proxy-server.herokuapp.com/https://ltv-data-api.herokuapp.com/api/v1/records.json?email='+ encodeURIComponent(emailAddressSearched);
 
-// Open a new connection, using the GET request on the URL endpoint
-request.open('GET', 'https://ltv-data-api.herokuapp.com/api/v1/records.json?email=doesmith@example.com', true)
-
+request.open('GET', url, true)
 request.onload = function () {
-  // Begin accessing JSON data here
-    var data = JSON.parse(this.response)
 
-    if (request.status >= 200 && request.status < 400) {
-    data.forEach((user) => {
-        console.log(user.email)
-    })
-    } else {
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    console.log(data)
+    document.getElementById("root").innerHTML = data.last_name;
+  } else {
     console.log('error')
-    }
+  }
 }
 
-// Send request
 request.send()
